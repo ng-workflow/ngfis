@@ -1,0 +1,30 @@
+{
+  "name": "ngfis",
+  "version": "0.1.0",
+  "description": "Front-end Integrated Solution with Angular and FIS",
+  "author": {
+    "name": "TZ",
+    "email": "atian25@qq.com"
+  },
+  "main": "index.js",
+  "bin": {
+    "ngfis": "bin/ngfis"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "fis": "^1.8.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ng-workflow/ngfis.git"
+  },
+  "keywords": [
+    "fis",
+    "angular",
+    "workflow",
+    "tools",
+    "Front-end Integrated Solution"
+  ],
+  "homepage": "https://github.com/ng-workflow/ngfis-showcase",
+  "license": "MIT"
+}
