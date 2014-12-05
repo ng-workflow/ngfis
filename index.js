@@ -15,3 +15,9 @@ Object.defineProperty(global, fis.cli.name, {
   writable : false,
   value : fis
 });
+
+if(process.argv.indexOf('-r') === -1 || process.argv.indexOf('--root') === -1){
+  process.argv.push('-r');
+  process.argv.push('./src');
+}
+
