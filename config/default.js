@@ -1,3 +1,9 @@
+var plugins = {
+  define : require('../plugins/postprocessor/define.js'),
+  //uaeConf : require('../plugins/prepackager/uae-conf.js'),
+  //frameworkConf : require('../plugins/prepackager/framework-conf.js')
+};
+
 module.exports = {
   project: {
     fileType: {},
@@ -10,7 +16,9 @@ module.exports = {
       js: 'jshint'
     },
     postprocessor: {
-      js: []
+      js: [
+        plugins.define
+      ]
     },
     prepackager: [],
     postpackager: [],
@@ -50,7 +58,6 @@ module.exports = {
         reg : /^\/components\/(.*\.js)$/i,
         id : '${name}/${version}/lib/$1',
         isMod : true,
-        isComponent : true,
         useHash : false,
         url : '${urlPrefix}/${name}/${version}/lib/$1',
         release : '/public/${name}/${version}/lib/$1'
