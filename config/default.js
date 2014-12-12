@@ -1,7 +1,7 @@
 var plugins = {
   define : require('../plugins/postprocessor/define.js'),
   //uaeConf : require('../plugins/prepackager/uae-conf.js'),
-  //frameworkConf : require('../plugins/prepackager/framework-conf.js')
+  frameworkConf : require('../plugins/postpackager/framework-conf.js')
 };
 
 module.exports = {
@@ -21,21 +21,23 @@ module.exports = {
       ]
     },
     prepackager: [],
-    postpackager: [],
+    postpackager: [
+      plugins.frameworkConf
+    ],
     //deploy: []
   },
   urlPrefix: '',
   framework: {
-    //cache: true,
+    cache: true,
     urlPattern: '/%s',
     comboPattern: '/co??%s'
   },
   roadmap: {
     path: [
-      {
-        reg: /.*\.tpl\.html$/,
-        release: false
-      },
+      //{
+      //  reg: /.*\.tpl\.html$/,
+      //  release: false
+      //},
       {
         reg : '**.md',
         isHtmlLike : true,
@@ -46,8 +48,16 @@ module.exports = {
         release : false
       },
       {
+        reg : /^\/components\/(.*\.js)$/i,
+        id : '$1',
+        isMod : true,
+        useHash : false,
+        url : '${urlPrefix}/${name}/${version}/lib/$1',
+        release : '/public/${name}/${version}/lib/$1'
+      },
+      {
         reg : /^\/components\/(.*)\.(styl|css)$/i,
-        id : '${name}/${version}/lib/$1.css',
+        id : '$1.css',
         isMod : true,
         useSprite : true,
         useHash : false,
@@ -55,12 +65,13 @@ module.exports = {
         release : '/public/${name}/${version}/lib/$1.$2'
       },
       {
-        reg : /^\/components\/(.*\.js)$/i,
-        id : '${name}/${version}/lib/$1',
+        reg : /^\/components\/(.*)\.tpl\.html$/i,
+        id : '$1',
         isMod : true,
+        isViews : true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/$1',
-        release : '/public/${name}/${version}/lib/$1'
+        url : '${urlPrefix}/${name}/${version}/lib/$1.tpl.html',
+        release : '/public/${name}/${version}/lib/$1.tpl.html'
       },
       {
         reg : /^\/components\/(.*)$/i,
