@@ -1,5 +1,6 @@
 var plugins = {
   define : require('../plugins/postprocessor/define.js'),
+  annotate : require('../plugins/postprocessor/annotate.js'),
   //uaeConf : require('../plugins/prepackager/uae-conf.js'),
   frameworkConf : require('../plugins/postpackager/framework-conf.js')
 };
@@ -17,7 +18,8 @@ module.exports = {
     },
     postprocessor: {
       js: [
-        plugins.define
+        plugins.define,
+        plugins.annotate
       ]
     },
     prepackager: [],
