@@ -1,5 +1,6 @@
 component_modules
 node_modules
+bower_components
 .DS_Store
 *.bak
 *.tmp

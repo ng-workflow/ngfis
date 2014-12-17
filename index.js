@@ -9,6 +9,11 @@ fis.require.prefixes = [ fis.cli.name, 'scrat', 'fis' ];
 var config = require('./config/default.js');
 fis.config.merge(config);
 
+//register command plugins
+['install'].forEach(function(name){
+  fis.require._cache['command-' + name] = require('./plugins/command/' + name);
+});
+
 //alias
 Object.defineProperty(global, fis.cli.name, {
   enumerable : true,
