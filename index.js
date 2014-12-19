@@ -11,7 +11,7 @@ fis.config.merge(config);
 
 //register command plugins
 ['install'].forEach(function(name){
-  fis.require._cache['command-' + name] = require('./plugins/command/' + name);
+  fis.require._cache['command-' + name] = require('./lib/command/' + name);
 });
 
 //alias
