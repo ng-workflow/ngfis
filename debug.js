@@ -1,5 +1,7 @@
-var fis = require('./index.js').fis;
 var root = 'D:/Workspace/Code/ng-workflow/ngfis-showcase';
+process.chdir(root);
+
+var fis = require('./index.js').fis;
 //fis.project.setProjectRoot(root + '/src');
 require(root + '/fis-conf.js');
 
@@ -13,8 +15,8 @@ var args = process.argv.concat([
 
 var args = process.argv.concat([
   'install',
- 'bootstrap zz=zepto angular#>1.3.6 angular-touch',
-  //'bootstrap',
+ //'bootstrap zz=zepto angular#>1.3.6 angular-touch',
+  'zepto',
   //'-c',
   '-d', 'dist'
 ]);
