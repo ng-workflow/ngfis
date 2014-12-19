@@ -15,22 +15,13 @@ var args = process.argv.concat([
 
 var args = process.argv.concat([
   'install',
- //'bootstrap zz=zepto angular#>1.3.6 angular-touch',
   'zepto',
+  'bootstrap',
   //'-c',
+  '--dev',
+  //'--save-dev',
   '-d', 'dist'
 ]);
 
 fis.cli.run(args);
-//var multimatch = require('multimatch');
-//
-//var list = ['bootstrap.css.map', 'bootstrap-theme.css', 'bootstrap-theme.min.css', 'bootstrap.css', 'bootstrap.min.css']
-//
-//var result = multimatch(list, ['*.css', '!*.min.css']);
-//var result = multimatch(list, '*.css');
-//console.log(result);
-//
-//var globby = require('globby');
-//var patterns = ['**/*.js', '**/*.css',  '!**/*.min.*', '!**/*.map'];
-//var files = globby.sync(patterns, {cwd: './bower_components/bootstrap/dist'});
-//console.log(files)
+
