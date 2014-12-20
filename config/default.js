@@ -81,6 +81,40 @@ module.exports = {
         release : '/public/${name}/${version}/lib/$1'
       },
       {
+        reg : /^\/component_modules\/(.*\.js)$/i,
+        id : '$1',
+        isMod : true,
+        isComponentModule: true,
+        useHash : false,
+        url : '${urlPrefix}/${name}/${version}/lib/$1',
+        release : '/public/${name}/${version}/lib/$1'
+      },
+      {
+        reg : /^\/component_modules\/(.*)\.(styl|css)$/i,
+        id : '$1.css',
+        isMod : true,
+        isComponentModule: true,
+        useSprite : true,
+        useHash : false,
+        url : '${urlPrefix}/${name}/${version}/lib/$1.$2',
+        release : '/public/${name}/${version}/lib/$1.$2'
+      },
+      {
+        reg : /^\/component_modules\/(.*)\.tpl\.html$/i,
+        id : '$1',
+        isMod : true,
+        isComponentModule: true,
+        isViews : true,
+        useHash : false,
+        url : '${urlPrefix}/${name}/${version}/lib/$1.tpl.html',
+        release : '/public/${name}/${version}/lib/$1.tpl.html'
+      },
+      {
+        reg : /^\/component_modules\/(.*)$/i,
+        url : '${urlPrefix}/${name}/${version}/lib/$1',
+        release : '/public/${name}/${version}/lib/$1'
+      },
+      {
         reg : /^\/views\/(.*\.(?:html?|js))$/,
         useCache : false,
         isViews : true,
@@ -104,5 +138,12 @@ module.exports = {
         useCompile : false
       }
     ]
+  },
+  settings: {
+    command: {
+      install: {
+        directory: 'component_modules'
+      }
+    }
   }
 };
