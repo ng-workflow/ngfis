@@ -70,7 +70,7 @@ module.exports = {
         reg : /^\/components\/(.*)\.tpl\.html$/i,
         id : '$1',
         isMod : true,
-        isViews : true,
+        isTemplate : true,
         useHash : false,
         url : '${urlPrefix}/${name}/${version}/lib/$1.tpl.html',
         release : '/public/${name}/${version}/lib/$1.tpl.html'
@@ -104,7 +104,7 @@ module.exports = {
         id : '$1',
         isMod : true,
         isComponentModule: true,
-        isViews : true,
+        isTemplate : true,
         useHash : false,
         url : '${urlPrefix}/${name}/${version}/lib/$1.tpl.html',
         release : '/public/${name}/${version}/lib/$1.tpl.html'
