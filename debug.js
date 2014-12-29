@@ -7,18 +7,18 @@ var fis = require('./index.js').fis;
 require(root + '/fis-conf.js');
 
 //debug release
-//var args = process.argv.concat([
-//  'release',
-//  '-c',
-//  //'-p',
-//  //'-r', fis.project.getProjectPath(), //root + '/src',
-//  '-d', 'D:/Workspace/Code/ng-workflow/ngfis/dist'
-//]);
-
 var args = process.argv.concat([
-  'server',
-  'start'
+  'release',
+  '-c',
+  //'-p',
+  //'-r', fis.project.getProjectPath(), //root + '/src',
+  '-d', 'D:/Workspace/Code/ng-workflow/ngfis/dist'
 ]);
+
+//var args = process.argv.concat([
+//  'server',
+//  'start'
+//]);
 
 //debug install
 //var args = process.argv.concat([
