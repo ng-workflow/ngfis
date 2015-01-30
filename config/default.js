@@ -71,6 +71,7 @@ module.exports = {
         id : '$1',
         isMod : true,
         isTemplate : true,
+        isHtmlLike: true,
         useHash : false,
         url : '${urlPrefix}/${name}/${version}/lib/$1.tpl.html',
         release : '/public/${name}/${version}/lib/$1.tpl.html'
@@ -105,6 +106,7 @@ module.exports = {
         isMod : true,
         isComponentModule: true,
         isTemplate : true,
+        isHtmlLike: true,
         useHash : false,
         url : '${urlPrefix}/${name}/${version}/lib/$1.tpl.html',
         release : '/public/${name}/${version}/lib/$1.tpl.html'

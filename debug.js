@@ -28,10 +28,11 @@ var args = process.argv.concat([
 //  //'angular',
 //  //'boostrap',
 //  //'ui-router',
+//  'aui/artTemplate',
 //  //'-c',
 //  //'--dev',
 //  //'--save-dev',
-//  //'-d', 'dist'
+//  '-d', 'dist'
 //]);
 
 fis.cli.run(args);
