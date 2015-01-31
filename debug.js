@@ -1,5 +1,6 @@
 //change process cwd
-var root = 'D:/Workspace/Code/ng-workflow/ngfis-showcase';
+//var root = 'D:/Workspace/Code/ng-workflow/ngfis-showcase';
+var root = 'D:/Workspace/Code/ninegame/ngm-static';
 process.chdir(root);
 
 //import conf
@@ -10,7 +11,8 @@ require(root + '/fis-conf.js');
 var args = process.argv.concat([
   'release',
   '-c',
-  //'-p',
+  '-p',
+  //'-o',
   //'-r', fis.project.getProjectPath(), //root + '/src',
   '-d', 'D:/Workspace/Code/ng-workflow/ngfis/dist'
 ]);
