@@ -120,6 +120,7 @@ module.exports = {
         reg : /^\/views\/(.*\.(?:html?|js))$/,
         useCache : false,
         isViews : true,
+        isHtmlLike: true,
         url : '${urlPrefix}/${name}/${version}/$1',
         release : '/public/${name}/${version}/$1'
       },
