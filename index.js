@@ -14,6 +14,11 @@ fis.config.merge(config);
 //  fis.require._cache['command-' + name] = require('./lib/command/' + name);
 //});
 
+//register parser plugins
+[].forEach(function(name){
+  fis.require._cache['parser-' + name] = require('./lib/parser/' + name);
+});
+
 //alias
 Object.defineProperty(global, fis.cli.name, {
   enumerable : true,

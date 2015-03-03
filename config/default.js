@@ -5,13 +5,17 @@ var plugins = {
   frameworkConf : require('../lib/postpackager/framework-conf.js')
 };
 
+//console.log(fis.config.get('name'), fis.config.get('version'))
+
 module.exports = {
   project: {
-    fileType: {},
+    fileType: {
+      text : 'handlebars, jade, ejs, jsx, styl, tag'
+    },
     exclude: /(node_modules\/.*)|(bower_modules\/.*)|(dist\/.*)/
   },
   modules: {
-    parser: {
+    parser : {
     },
     lint: {
       js: 'jshint'
@@ -35,6 +39,8 @@ module.exports = {
     comboPattern: '/co??%s'
   },
   roadmap: {
+    ext: {
+    },
     path: [
       //{
       //  reg: /.*\.tpl\.html$/,
@@ -79,6 +85,7 @@ module.exports = {
       {
         reg : /^\/components\/(.*)$/i,
         url : '${urlPrefix}/${name}/${version}/lib/$1',
+        useHash : false,
         release : '/public/${name}/${version}/lib/$1'
       },
       {
@@ -114,11 +121,19 @@ module.exports = {
       {
         reg : /^\/component_modules\/(.*)$/i,
         url : '${urlPrefix}/${name}/${version}/lib/$1',
+        useHash : false,
         release : '/public/${name}/${version}/lib/$1'
+      },
+      {
+        reg : /^\/views\/(favicon\.(?:png|ico))$/,
+        useHash : false,
+        url : '${urlPrefix}/$1',
+        release : '/public/$1'
       },
       {
         reg : /^\/views\/(.*\.(?:html?|js))$/,
         useCache : false,
+        useHash : false,
         isViews : true,
         isHtmlLike: true,
         url : '${urlPrefix}/${name}/${version}/$1',
@@ -127,6 +142,7 @@ module.exports = {
       {
         reg : /^\/views\/(.*)$/,
         useSprite : true,
+        useHash : false,
         isViews : true,
         url : '${urlPrefix}/${name}/${version}/$1',
         release : '/public/${name}/${version}/$1'
