@@ -10,13 +10,18 @@ var config = require('./config/default.js');
 fis.config.merge(config);
 
 //register command plugins
-//['install'].forEach(function(name){
-//  fis.require._cache['command-' + name] = require('./lib/command/' + name);
-//});
+['publish'].forEach(function(name){
+  fis.require._cache['command-' + name] = require('./lib/command/' + name);
+});
 
 //register parser plugins
 [].forEach(function(name){
   fis.require._cache['parser-' + name] = require('./lib/parser/' + name);
+});
+
+//register deploy plugins
+['compress'].forEach(function(name){
+  fis.require._cache['deploy-' + name] = require('./lib/deploy/' + name);
 });
 
 //alias

@@ -30,7 +30,7 @@ module.exports = {
     postpackager: [
       plugins.frameworkConf
     ],
-    //deploy: []
+    deploy: ['default', 'compress']
   },
   urlPrefix: '',
   framework: {
@@ -162,6 +162,49 @@ module.exports = {
     command: {
       install: {
         directory: 'component_modules'
+      }
+    },
+    optimizer : {
+      "uglify-js" : {
+        mangle: {
+          except: ["require", "exports", "module", "window"]
+        },
+        compress: {
+          "global_defs": {
+            PROD: true
+          },
+          "dead_code": true,
+          "pure_funcs": [
+            "console.log",
+            //"console.info",
+            //"console.warn",
+            //"console.error",
+            "console.assert",
+            "console.count",
+            "console.clear",
+            "console.group",
+            "console.groupEnd",
+            "console.groupCollapsed",
+            "console.trace",
+            "console.debug",
+            "console.dir",
+            "console.dirxml",
+            "console.profile",
+            "console.profileEnd",
+            "console.time",
+            "console.timeEnd",
+            "console.timeStamp",
+            "console.table",
+            "console.exception"
+          ]
+        }
+      }
+    },
+    deploy: {
+      compress: {
+        zip: {
+          file: '../dist/dist.zip'
+        }
       }
     }
   }
