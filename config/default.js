@@ -83,9 +83,14 @@ module.exports = {
         release : '/public/${name}/${version}/lib/$1.tpl.html'
       },
       {
-        reg : /^\/components\/(.*)$/i,
+        reg : /^\/components\/(.*)\.json$/i,
         url : '${urlPrefix}/${name}/${version}/lib/$1',
         useHash : false,
+        release : '/public/${name}/${version}/lib/$1'
+      },
+      {
+        reg : /^\/components\/(.*)$/i,
+        url : '${urlPrefix}/${name}/${version}/lib/$1',
         release : '/public/${name}/${version}/lib/$1'
       },
       {
@@ -133,7 +138,7 @@ module.exports = {
       {
         reg : /^\/views\/(.*\.(?:html?|js))$/,
         useCache : false,
-        useHash : false,
+        //useHash : false,
         isViews : true,
         isHtmlLike: true,
         url : '${urlPrefix}/${name}/${version}/$1',
@@ -142,7 +147,7 @@ module.exports = {
       {
         reg : /^\/views\/(.*)$/,
         useSprite : true,
-        useHash : false,
+        //useHash : false,
         isViews : true,
         url : '${urlPrefix}/${name}/${version}/$1',
         release : '/public/${name}/${version}/$1'
