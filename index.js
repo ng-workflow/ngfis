@@ -31,3 +31,6 @@ Object.defineProperty(global, fis.cli.name, {
   value : fis
 });
 
+//check update
+var updateNotifier = require('update-notifier');
+updateNotifier({pkg: fis.cli.info}).notify();
