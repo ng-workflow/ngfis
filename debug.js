@@ -10,8 +10,8 @@ require(root + '/fis-conf.js');
 //debug release
 var args = process.argv.concat([
   'release',
-  '-c',
-  '-p',
+  //'-c',
+  //'-p',
   //'-o',
   //'-r', fis.project.getProjectPath(), //root + '/src',
   '-d', 'D:/Workspace/Code/ng-workflow/ngfis/dist'

@@ -95,39 +95,39 @@ module.exports = {
       },
       {
         reg : /^\/component_modules\/(.*\.js)$/i,
-        id : '$1',
+        id : 'c/$1',
         isMod : true,
         isComponentModule: true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/$1',
-        release : '/public/${name}/${version}/lib/$1'
+        url : '${urlPrefix}/${name}/${version}/lib/c/$1',
+        release : '/public/${name}/${version}/lib/c/$1'
       },
       {
         reg : /^\/component_modules\/(.*)\.(styl|css)$/i,
-        id : '$1.css',
+        id : 'c/$1.css',
         isMod : true,
         isComponentModule: true,
         useSprite : true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/$1.$2',
-        release : '/public/${name}/${version}/lib/$1.$2'
+        url : '${urlPrefix}/${name}/${version}/lib/c/$1.$2',
+        release : '/public/${name}/${version}/lib/c/$1.$2'
       },
       {
         reg : /^\/component_modules\/(.*)\.tpl\.html$/i,
-        id : '$1',
+        id : 'c/$1',
         isMod : true,
         isComponentModule: true,
         isTemplate : true,
         isHtmlLike: true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/$1.tpl.html',
-        release : '/public/${name}/${version}/lib/$1.tpl.html'
+        url : '${urlPrefix}/${name}/${version}/lib/c/$1.tpl.html',
+        release : '/public/${name}/${version}/lib/c/$1.tpl.html'
       },
       {
         reg : /^\/component_modules\/(.*)$/i,
-        url : '${urlPrefix}/${name}/${version}/lib/$1',
+        url : '${urlPrefix}/${name}/${version}/lib/c/$1',
         useHash : false,
-        release : '/public/${name}/${version}/lib/$1'
+        release : '/public/${name}/${version}/lib/c/$1'
       },
       {
         reg : /^\/views\/(favicon\.(?:png|ico))$/,
