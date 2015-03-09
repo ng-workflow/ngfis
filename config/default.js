@@ -32,6 +32,9 @@ module.exports = {
     ],
     deploy: ['default', 'compress']
   },
+  component: {
+    dir: '/component_modules'
+  },
   urlPrefix: '',
   framework: {
     cache: true,
