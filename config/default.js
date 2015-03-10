@@ -15,7 +15,7 @@ module.exports = {
     exclude: /(node_modules\/.*)|(bower_modules\/.*)|(dist\/.*)/
   },
   modules: {
-    parser : {
+    parser: {
     },
     lint: {
       js: 'jshint'
@@ -30,6 +30,12 @@ module.exports = {
     postpackager: [
       plugins.frameworkConf
     ],
+    optimizer: {
+      png: 'pngcrush',
+      json: function(content){
+        return JSON.stringify(JSON.parse(content));
+      }
+    },
     deploy: ['default', 'compress']
   },
   component: {
@@ -100,7 +106,6 @@ module.exports = {
         reg : /^\/component_modules\/(.*\.js)$/i,
         id : 'c/$1',
         isMod : true,
-        isComponentModule: true,
         useHash : false,
         url : '${urlPrefix}/${name}/${version}/lib/c/$1',
         release : '/public/${name}/${version}/lib/c/$1'
@@ -109,7 +114,6 @@ module.exports = {
         reg : /^\/component_modules\/(.*)\.(styl|css)$/i,
         id : 'c/$1.css',
         isMod : true,
-        isComponentModule: true,
         useSprite : true,
         useHash : false,
         url : '${urlPrefix}/${name}/${version}/lib/c/$1.$2',
@@ -119,7 +123,6 @@ module.exports = {
         reg : /^\/component_modules\/(.*)\.tpl\.html$/i,
         id : 'c/$1',
         isMod : true,
-        isComponentModule: true,
         isTemplate : true,
         isHtmlLike: true,
         useHash : false,
