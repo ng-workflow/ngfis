@@ -1,6 +1,6 @@
 {
   "name": "ngfis",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Front-end Integrated Solution with Angular and FIS",
   "author": {
     "name": "TZ",
@@ -13,6 +13,7 @@
   "preferGlobal": true,
   "dependencies": {
     "fis": "~1.9.5",
+    "fis-optimizer-html-minifier": "0.0.9",
     "fis-optimizer-pngcrush": "0.0.6",
     "fs-extra": "^0.16.5",
     "jszip": "^2.4.0",
