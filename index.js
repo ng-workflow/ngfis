@@ -10,7 +10,7 @@ var config = require('./config/default.js');
 fis.config.merge(config);
 
 //register command plugins
-['publish'].forEach(function(name){
+['publish', 'init'].forEach(function(name){
   fis.require._cache['command-' + name] = require('./lib/command/' + name);
 });
 
@@ -34,3 +34,8 @@ Object.defineProperty(global, fis.cli.name, {
 //check update
 var updateNotifier = require('update-notifier');
 updateNotifier({pkg: fis.cli.info}).notify();
+
+//warning
+if(fis.util.isDir('node_modules')){
+  fis.log.warning('source folder `node_modules` will cause fis compile slow, plz delete it.')
+}
