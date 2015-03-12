@@ -227,6 +227,18 @@ module.exports = {
           ]
         }
       }
+    },
+    deploy: {
+      default: {
+        //ngfis release -d local
+        local: {
+          to: '../dist'
+        }
+      },
+      //ngfis release -d zip
+      compress: {
+        zip: {}
+      }
     }
   }
 };
