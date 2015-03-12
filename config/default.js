@@ -227,13 +227,6 @@ module.exports = {
           ]
         }
       }
-    },
-    deploy: {
-      compress: {
-        zip: {
-          file: '../dist/dist.zip'
-        }
-      }
     }
   }
 };

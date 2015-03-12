@@ -17,9 +17,10 @@ var args = process.argv.concat([
   '-d', 'D:/Workspace/Code/ng-workflow/ngfis/dist'
 ]);
 
-//args = process.argv.concat([
-//  'install'
-//]);
+args = process.argv.concat([
+  'publish',
+  '-d', 'zip'
+]);
 
 //var args = process.argv.concat([
 //  'server',
