@@ -10,17 +10,17 @@ require(root + '/fis-conf.js');
 //debug release
 var args = process.argv.concat([
   'release',
-  '-c',
+  //'-c',
   //'-p',
   //'-o',
+  '-t',
   //'-r', fis.project.getProjectPath(), //root + '/src',
   '-d', 'D:/Workspace/Code/ng-workflow/ngfis/dist'
 ]);
 
-args = process.argv.concat([
-  'publish',
-  '-d', 'zip'
-]);
+//args = process.argv.concat([
+//  'publish'
+//]);
 
 //var args = process.argv.concat([
 //  'server',
