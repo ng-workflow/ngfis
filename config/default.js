@@ -66,6 +66,31 @@ module.exports = {
         release : false
       },
       {
+        reg: /^\/test\/test-main\.js$/,
+        isViews: true,
+        isTest: true,
+        useHash : false,
+        release: '/test/test-main.js'
+      },
+      {
+        reg: /^\/test\/(.*\.spec\.js)$/,
+        id : '$1',
+        isJsLike: true,
+        isMod : true,
+        isTest: true,
+        useHash : false,
+        release: '/test/${name}/${version}/$1'
+      },
+      {
+        reg: /^\/components\/(.*\.spec\.js)$/,
+        id : '$1',
+        isJsLike: true,
+        isMod : true,
+        isTest: true,
+        useHash : false,
+        release: '/test/${name}/${version}/$1'
+      },
+      {
         reg : /^\/components\/(.*\.js)$/i,
         id : '$1',
         isMod : true,
@@ -172,27 +197,27 @@ module.exports = {
   },
   settings: {
     optimizer : {
-      "html-minifier": {
-        removeComments: true,
-        collapseWhitespace: true,
-        minifyCSS: true,
-        minifyJS: {
-          mangle: {
-            except: ["require", "exports", "module", "window"]
-          }
-        }
-        //removeCommentsFromCDATA:       true,
-        //removeCDATASectionsFromCDATA:  true,
-        //collapseBooleanAttributes:     true,
-        //removeRedundantAttributes:     true,
-        //removeEmptyElements:           true,
-        //removeOptionalTags:            true,
-        //removeAttributeQuotes:         true,
-        //useShortDoctype:               true,
-        //removeEmptyAttributes:         true,
-        //removeScriptTypeAttributes:    true,
-        //removeStyleLinkTypeAttributes: true
-      },
+      //"html-minifier": {
+      //  removeComments: true,
+      //  collapseWhitespace: true,
+      //  minifyCSS: true,
+      //  minifyJS: {
+      //    mangle: {
+      //      except: ["require", "exports", "module", "window"]
+      //    }
+      //  }
+      //  //removeCommentsFromCDATA:       true,
+      //  //removeCDATASectionsFromCDATA:  true,
+      //  //collapseBooleanAttributes:     true,
+      //  //removeRedundantAttributes:     true,
+      //  //removeEmptyElements:           true,
+      //  //removeOptionalTags:            true,
+      //  //removeAttributeQuotes:         true,
+      //  //useShortDoctype:               true,
+      //  //removeEmptyAttributes:         true,
+      //  //removeScriptTypeAttributes:    true,
+      //  //removeStyleLinkTypeAttributes: true
+      //},
       "uglify-js" : {
         mangle: {
           except: ["require", "exports", "module", "window"]
