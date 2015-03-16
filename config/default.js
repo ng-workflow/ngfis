@@ -1,6 +1,7 @@
 var plugins = {
   define : require('../lib/postprocessor/define.js'),
   annotate : require('../lib/postprocessor/annotate.js'),
+  vender : require('../lib/prepackager/vender.js'),
   //uaeConf : require('../lib/prepackager/uae-conf.js'),
   frameworkConf : require('../lib/postpackager/framework-conf.js')
 };
@@ -26,7 +27,9 @@ module.exports = {
         plugins.annotate
       ]
     },
-    prepackager: [],
+    prepackager: [
+      plugins.vender
+    ],
     postpackager: [
       plugins.frameworkConf
     ],
@@ -196,6 +199,9 @@ module.exports = {
     ]
   },
   settings: {
+    vender: {
+
+    },
     optimizer : {
       //"html-minifier": {
       //  removeComments: true,
