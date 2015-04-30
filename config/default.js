@@ -34,7 +34,7 @@ module.exports = {
       plugins.frameworkConf
     ],
     optimizer: {
-      html: 'html-minifier',
+      //html: 'html-minifier',
       png: 'pngcrush',
       json: function(content){
         return JSON.stringify(JSON.parse(content));
