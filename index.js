@@ -10,7 +10,7 @@ var config = require('./config/default.js');
 fis.config.merge(config);
 
 //register command plugins
-['publish', 'init', 'server'].forEach(function(name){
+['publish', 'init'].forEach(function(name){
   fis.require._cache['command-' + name] = require('./lib/command/' + name);
 });
 

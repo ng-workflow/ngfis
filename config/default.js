@@ -34,7 +34,6 @@ module.exports = {
       plugins.frameworkConf
     ],
     optimizer: {
-      //html: 'html-minifier',
       png: 'pngcrush',
       json: function(content){
         return JSON.stringify(JSON.parse(content));
@@ -203,27 +202,6 @@ module.exports = {
 
     },
     optimizer : {
-      //"html-minifier": {
-      //  removeComments: true,
-      //  collapseWhitespace: true,
-      //  minifyCSS: true,
-      //  minifyJS: {
-      //    mangle: {
-      //      except: ["require", "exports", "module", "window"]
-      //    }
-      //  }
-      //  //removeCommentsFromCDATA:       true,
-      //  //removeCDATASectionsFromCDATA:  true,
-      //  //collapseBooleanAttributes:     true,
-      //  //removeRedundantAttributes:     true,
-      //  //removeEmptyElements:           true,
-      //  //removeOptionalTags:            true,
-      //  //removeAttributeQuotes:         true,
-      //  //useShortDoctype:               true,
-      //  //removeEmptyAttributes:         true,
-      //  //removeScriptTypeAttributes:    true,
-      //  //removeStyleLinkTypeAttributes: true
-      //},
       "uglify-js" : {
         mangle: {
           except: ["require", "exports", "module", "window"]
