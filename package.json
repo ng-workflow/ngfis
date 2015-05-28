@@ -19,6 +19,7 @@
     "jszip": "^2.5.0",
     "lodash": "^3.9.3",
     "mkdirp": "^0.5.1",
+    "moment": "^2.10.3",
     "ng-annotate": "^1.0.0",
     "scrat-command-server": "^0.0.16",
     "shelljs": "^0.5.0",
