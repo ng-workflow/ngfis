@@ -44,7 +44,7 @@ module.exports = {
   component: {
     dir: '/component_modules'
   },
-  urlPrefix: '',
+  projectPrefix: '',
   framework: {
     cache: true,
     urlPattern: '/%s',
@@ -81,7 +81,7 @@ module.exports = {
         isMod : true,
         isTest: true,
         useHash : false,
-        release: '/test/${name}/${version}/$1'
+        release: '/test/${projectPrefix}/$1'
       },
       {
         reg: /^\/components\/(.*\.spec\.js)$/,
@@ -90,15 +90,15 @@ module.exports = {
         isMod : true,
         isTest: true,
         useHash : false,
-        release: '/test/${name}/${version}/$1'
+        release: '/test/${projectPrefix}/$1'
       },
       {
         reg : /^\/components\/(.*\.js)$/i,
         id : '$1',
         isMod : true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/$1',
-        release : '/public/${name}/${version}/lib/$1'
+        url : '${projectPrefix}/lib/$1',
+        release : '/public/${projectPrefix}/lib/$1'
       },
       {
         reg : /^\/components\/(.*)\.(styl|css)$/i,
@@ -106,8 +106,8 @@ module.exports = {
         isMod : true,
         useSprite : true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/$1.$2',
-        release : '/public/${name}/${version}/lib/$1.$2'
+        url : '${projectPrefix}/lib/$1.$2',
+        release : '/public/${projectPrefix}/lib/$1.$2'
       },
       {
         reg : /^\/components\/(.*)\.tpl\.html$/i,
@@ -116,27 +116,27 @@ module.exports = {
         isTemplate : true,
         isHtmlLike: true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/$1.tpl.html',
-        release : '/public/${name}/${version}/lib/$1.tpl.html'
+        url : '${projectPrefix}/lib/$1.tpl.html',
+        release : '/public/${projectPrefix}/lib/$1.tpl.html'
       },
       {
         reg : /^\/components\/(.*)\.json$/i,
-        url : '${urlPrefix}/${name}/${version}/lib/$1',
+        url : '${projectPrefix}/lib/$1',
         useHash : false,
-        release : '/public/${name}/${version}/lib/$1'
+        release : '/public/${projectPrefix}/lib/$1'
       },
       {
         reg : /^\/components\/(.*)$/i,
-        url : '${urlPrefix}/${name}/${version}/lib/$1',
-        release : '/public/${name}/${version}/lib/$1'
+        url : '${projectPrefix}/lib/$1',
+        release : '/public/${projectPrefix}/lib/$1'
       },
       {
         reg : /^\/component_modules\/(.*\.js)$/i,
         id : 'c/$1',
         isMod : true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/c/$1',
-        release : '/public/${name}/${version}/lib/c/$1'
+        url : '${projectPrefix}/lib/c/$1',
+        release : '/public/${projectPrefix}/lib/c/$1'
       },
       {
         reg : /^\/component_modules\/(.*)\.(styl|css)$/i,
@@ -144,8 +144,8 @@ module.exports = {
         isMod : true,
         useSprite : true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/c/$1.$2',
-        release : '/public/${name}/${version}/lib/c/$1.$2'
+        url : '${projectPrefix}/lib/c/$1.$2',
+        release : '/public/${projectPrefix}/lib/c/$1.$2'
       },
       {
         reg : /^\/component_modules\/(.*)\.tpl\.html$/i,
@@ -154,19 +154,19 @@ module.exports = {
         isTemplate : true,
         isHtmlLike: true,
         useHash : false,
-        url : '${urlPrefix}/${name}/${version}/lib/c/$1.tpl.html',
-        release : '/public/${name}/${version}/lib/c/$1.tpl.html'
+        url : '${projectPrefix}/lib/c/$1.tpl.html',
+        release : '/public/${projectPrefix}/lib/c/$1.tpl.html'
       },
       {
         reg : /^\/component_modules\/(.*)$/i,
-        url : '${urlPrefix}/${name}/${version}/lib/c/$1',
+        url : '${projectPrefix}/lib/c/$1',
         useHash : false,
-        release : '/public/${name}/${version}/lib/c/$1'
+        release : '/public/${projectPrefix}/lib/c/$1'
       },
       {
         reg : /^\/views\/(favicon\.(?:png|ico))$/,
         useHash : false,
-        url : '${urlPrefix}/$1',
+        url : '${projectPrefix}/$1',
         release : '/public/$1'
       },
       {
@@ -175,16 +175,16 @@ module.exports = {
         //useHash : false,
         isViews : true,
         isHtmlLike: true,
-        url : '${urlPrefix}/${name}/${version}/$1',
-        release : '/public/${name}/${version}/$1'
+        url : '${projectPrefix}/$1',
+        release : '/public/${projectPrefix}/$1'
       },
       {
         reg : /^\/views\/(.*)$/,
         useSprite : true,
         //useHash : false,
         isViews : true,
-        url : '${urlPrefix}/${name}/${version}/$1',
-        release : '/public/${name}/${version}/$1'
+        url : '${projectPrefix}/$1',
+        release : '/public/${projectPrefix}/$1'
       },
       {
         reg : 'map.json',
@@ -246,7 +246,8 @@ module.exports = {
       },
       //ngfis release -d zip
       compress: {
-        zip: {}
+        zip: {
+        }
       }
     }
   }
