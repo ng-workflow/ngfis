@@ -1,6 +1,6 @@
 {
   "name": "ngfis",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Front-end Integrated Solution with Angular and FIS",
   "author": {
     "name": "TZ",
@@ -15,7 +15,7 @@
     "fis": "~1.9.25",
     "fis-optimizer-pngcrush": "0.0.6",
     "fs-extra": "^0.18.4",
-    "generator-scrat": "^0.3.2",
+    "generator-remote-installer": "^0.1.1",
     "jszip": "^2.5.0",
     "lodash": "^3.9.3",
     "mkdirp": "^0.5.1",
