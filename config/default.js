@@ -166,7 +166,7 @@ module.exports = {
       {
         reg : /^\/views\/(favicon\.(?:png|ico))$/,
         useHash : false,
-        url : '${projectPrefix}/$1',
+        url : '/$1',
         release : '/public/$1'
       },
       {
