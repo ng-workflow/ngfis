@@ -1,6 +1,6 @@
 //change process cwd
 //var root = 'D:/Workspace/Code/ng-workflow/ngfis-showcase';
-var root = '/Users/tz/Workspaces/ninegame/ios-h5';
+var root = '/Users/tz/Workspaces/ninegame/ngm-static';
 process.chdir(root);
 
 //import conf
@@ -13,9 +13,9 @@ var args = process.argv.concat([
   //'-c',
   //'-p',
   //'-o',
-  '-t',
+  //'-t',
   //'-r', fis.project.getProjectPath(), //root + '/src',
-  '-d', '/Users/tz/Workspaces/ninegame/ios-h5/dist'
+  //'-d', '/Users/tz/Workspaces/ninegame/ios-h5/dist'
 ]);
 
 //args = process.argv.concat([

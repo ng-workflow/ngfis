@@ -48,7 +48,8 @@ module.exports = {
   framework: {
     cache: true,
     urlPattern: '/%s',
-    comboPattern: '/co??%s'
+    comboPattern: '/co??%s',
+    releaseCss: false
   },
   roadmap: {
     ext: {
