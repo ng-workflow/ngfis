@@ -19,11 +19,6 @@ fis.config.merge(config);
   fis.require._cache['parser-' + name] = require('./lib/parser/' + name);
 });
 
-//register deploy plugins
-['compress'].forEach(function(name){
-  fis.require._cache['deploy-' + name] = require('./lib/deploy/' + name);
-});
-
 //alias
 Object.defineProperty(global, fis.cli.name, {
   enumerable : true,

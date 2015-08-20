@@ -1,6 +1,6 @@
 {
   "name": "ngfis",
-  "version": "0.5.9",
+  "version": "0.6.0",
   "description": "Front-end Integrated Solution with Angular and FIS",
   "author": {
     "name": "TZ",
@@ -21,7 +21,8 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.10.3",
     "ng-annotate": "^1.0.0",
-    "scrat-command-server": "^0.0.18",
+    "scrat-command-server": "^0.0.19",
+    "scrat-deploy-compress": "^0.1.1",
     "shelljs": "^0.5.0",
     "update-notifier": "^0.5.0"
   },
