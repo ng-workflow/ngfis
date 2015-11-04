@@ -1,6 +1,6 @@
 {
   "name": "ngfis",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Front-end Integrated Solution with Angular and FIS",
   "author": {
     "name": "TZ",
@@ -12,7 +12,7 @@
   },
   "preferGlobal": true,
   "dependencies": {
-    "fis": "1.9.30",
+    "fis": "1.9.36",
     "fis-optimizer-pngcrush": "0.0.6",
     "fs-extra": "0.18.4",
     "generator-install": "^0.3.0",
@@ -37,6 +37,6 @@
     "tools",
     "Front-end Integrated Solution"
   ],
-  "homepage": "https://github.com/ng-workflow/ngfis-showcase",
+  "homepage": "https://github.com/ng-workflow/ngfis",
   "license": "MIT"
 }
