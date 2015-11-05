@@ -34,7 +34,6 @@ module.exports = {
       plugins.frameworkConf
     ],
     optimizer: {
-      png: 'pngcrush',
       json: function(content){
         return JSON.stringify(JSON.parse(content));
       }
@@ -203,6 +202,9 @@ module.exports = {
 
     },
     optimizer : {
+      "png-compressor" : {
+        type : 'pngquant' //default is pngcrush
+      }, 
       "uglify-js" : {
         mangle: {
           except: ["require", "exports", "module", "window"]
